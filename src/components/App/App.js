@@ -19,7 +19,7 @@ function App() {
       setEndGame={setEndGame} setMistakesNum={setMistakesNum} 
       setChoosedLetters={setChoosedLetters} />
       <Letras key={endGame} mayIPlay={mayIPlay} choosedLetters={choosedLetters} 
-      setChoosedLetters={setChoosedLetters} 
+      setChoosedLetters={setChoosedLetters}
       setMistakesNum={setMistakesNum} choosedWord={choosedWord} setVisualWord={setVisualWord} 
       setEndGame={setEndGame} mistakesNum={mistakesNum} setMayIPlay={setMayIPlay} />
     </div>

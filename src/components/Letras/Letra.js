@@ -9,6 +9,7 @@ export default function Letra({mayIPlay, setMayIPlay, choosedLetters, setChoosed
         setIsClickable(false);
         const newChoosedLetters = [...choosedLetters, letter];
         setChoosedLetters(newChoosedLetters);
+
         if (!arrayWord.includes(letter)) {
             const newMistakesNum = mistakesNum + 1;
             setMistakesNum(newMistakesNum);
@@ -16,6 +17,7 @@ export default function Letra({mayIPlay, setMayIPlay, choosedLetters, setChoosed
             if (newMistakesNum === 6) {
                 setEndGame('lose');
                 setMayIPlay(false);
+                setVisualWord(arrayWord);
             }
         } else {
             const newVisualWord = arrayWord.map(l => newChoosedLetters.includes(l) ? l : '_');
