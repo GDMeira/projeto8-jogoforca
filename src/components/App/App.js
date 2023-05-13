@@ -9,15 +9,19 @@ function App() {
   const [mistakesNum, setMistakesNum] = useState(0);
   const [choosedWord, setChoosedWord] = useState('');
   const [visualWord, setVisualWord] = useState([]);
+  const [endGame, setEndGame] = useState('');
 
   return (
     <div className='App'>
       <Jogo mayIPlay={mayIPlay} setMayIPlay={setMayIPlay} 
-      choosedLetters={choosedLetters} mistakesNum={mistakesNum} 
-      choosedWord={choosedWord} setChoosedWord={setChoosedWord}
-      visualWord={visualWord} setVisualWord={setVisualWord} />
-      <Letras mayIPlay={mayIPlay} choosedLetters={choosedLetters} setChoosedLetters={setChoosedLetters} 
-      setMistakesNum={setMistakesNum} choosedWord={choosedWord} setVisualWord={setVisualWord}/>
+      mistakesNum={mistakesNum} setChoosedWord={setChoosedWord}
+      visualWord={visualWord} setVisualWord={setVisualWord} endGame={endGame}
+      setEndGame={setEndGame} setMistakesNum={setMistakesNum} 
+      setChoosedLetters={setChoosedLetters} />
+      <Letras key={endGame} mayIPlay={mayIPlay} choosedLetters={choosedLetters} 
+      setChoosedLetters={setChoosedLetters} 
+      setMistakesNum={setMistakesNum} choosedWord={choosedWord} setVisualWord={setVisualWord} 
+      setEndGame={setEndGame} mistakesNum={mistakesNum} setMayIPlay={setMayIPlay} />
     </div>
   );
 }

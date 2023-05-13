@@ -29,6 +29,14 @@
 
 .Jogo span {
     font-size: 50px;
-    margin: 6px;
+    margin: 3px;
     font-weight: 700;
+}
+
+.lose {
+    color: #FF0000;
+}
+
+.win {
+    color: #27AE60;
 }

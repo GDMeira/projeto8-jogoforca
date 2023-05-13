@@ -1,7 +1,7 @@
 import './Letra.css';
 import { useState } from 'react';
 
-export default function Letra({mayIPlay, choosedLetters, setChoosedLetters, setMistakesNum, letter, choosedWord, setVisualWord}) {
+export default function Letra({mayIPlay, setMayIPlay, choosedLetters, setChoosedLetters, setMistakesNum, letter, choosedWord, setVisualWord, setEndGame, mistakesNum}) {
     const [isClickable, setIsClickable] = useState(true);
     const arrayWord = [...choosedWord];
 
@@ -10,14 +10,23 @@ export default function Letra({mayIPlay, choosedLetters, setChoosedLetters, setM
         const newChoosedLetters = [...choosedLetters, letter];
         setChoosedLetters(newChoosedLetters);
         if (!arrayWord.includes(letter)) {
-            setMistakesNum(n => n + 1);
+            const newMistakesNum = mistakesNum + 1;
+            setMistakesNum(newMistakesNum);
+
+            if (newMistakesNum === 6) {
+                setEndGame('lose');
+                setMayIPlay(false);
+            }
         } else {
-            setVisualWord(arrayWord.map(l => newChoosedLetters.includes(l) ? l : '_'));
+            const newVisualWord = arrayWord.map(l => newChoosedLetters.includes(l) ? l : '_');
+            setVisualWord(newVisualWord);
+
+            if (newVisualWord.join() === arrayWord.join()) {
+                setEndGame('win');
+                setMayIPlay(false);
+            }
         }
     }
-    // if (!mayIPlay) {
-    //     setIsClickable(true);
-    // }
 
     return <button className='Letra' disabled={!(mayIPlay && isClickable)} onClick={() => clickLetter(letter)} >{letter}</button>
 
