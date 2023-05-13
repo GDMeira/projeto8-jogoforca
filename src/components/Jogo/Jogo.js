@@ -23,10 +23,10 @@ export default function Jogo({ setChoosedLetters, setMistakesNum, setEndGame, ma
 
     return (
         <div className='Jogo'>
-            <img src={forca[mistakesNum]} alt='forca' className='forca' />
+            <img data-test='game-image' src={forca[mistakesNum]} alt='forca' className='forca' />
             <div className="right">
-                <button disabled={mayIPlay} className='chooseWord' onClick={startGame}>Escolher Palavra</button>
-                <div className="Word">
+                <button data-test='choose-word' disabled={mayIPlay} className='chooseWord' onClick={startGame}>Escolher Palavra</button>
+                <div data-test='word' className="Word">
                     {visualWord.map((letter, i) => <span key={i} className={endGame} >{letter}</span>)}
                 </div>
             </div>

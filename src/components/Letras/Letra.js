@@ -30,6 +30,6 @@ export default function Letra({mayIPlay, setMayIPlay, choosedLetters, setChoosed
         }
     }
 
-    return <button className='Letra' disabled={!(mayIPlay && isClickable)} onClick={() => clickLetter(letter)} >{letter}</button>
+    return <button data-test='letter' className='Letra' disabled={!(mayIPlay && isClickable)} onClick={() => clickLetter(letter)} >{letter}</button>
 
 }
