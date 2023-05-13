@@ -1,8 +1,12 @@
+import './Word.css';
+
 export default function Word({choosedWord, choosedLetters}) {
     const arrayWord = [...choosedWord];
 
     return (
-        arrayWord.map(letter => (
-            choosedLetters.includes(letter) ? <span>{letter}</span> : <span>_</span>))
+        arrayWord.map((letter, i) => {
+            const visual = choosedLetters.includes(letter) ? letter : '_';
+            <span key={i} >{visual}</span>
+        })
     )
 }

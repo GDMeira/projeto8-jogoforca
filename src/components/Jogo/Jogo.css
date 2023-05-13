@@ -1,0 +1,16 @@
+.Jogo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Jogo img {
+    width: 400px;
+}
+
+.Jogo .right {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+}

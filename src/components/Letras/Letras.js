@@ -1,18 +1,16 @@
-import Letra from './Letra.css';
+import './Letras.css';
+import Letra from './Letra';
 import React from 'react';
-import { IonIcon } from '@ionic/react';
-import { logoIonic } from 'ionicons/icons';
-const alfabeto = ['a','b','c'];
+import alfabeto from './alfabeto';
 
-export default function Letras({mayIPlay, setChoosedLetters, setMistakesNum}) {
+export default function Letras({mayIPlay, setChoosedLetters, setMistakesNum, choosedWord}) {
 
 
     return (
-        <>
-            <h1>Letrinhas</h1>
-            <IonIcon icon={logoIonic}></IonIcon>
+        <div className='Letras'>
             {alfabeto.map(letter => <Letra key={letter} mayIPlay={mayIPlay}
-            setChoosedLetters={setChoosedLetters} setMistakesNum={setMistakesNum} />)}
-        </>
+            setChoosedLetters={setChoosedLetters} setMistakesNum={setMistakesNum} 
+            letter={letter} choosedWord={choosedWord} />)}
+        </div>
     )
 }
