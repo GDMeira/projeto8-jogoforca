@@ -8,14 +8,16 @@ function App() {
   const [choosedLetters, setChoosedLetters] = useState([]);
   const [mistakesNum, setMistakesNum] = useState(0);
   const [choosedWord, setChoosedWord] = useState('');
+  const [visualWord, setVisualWord] = useState([]);
 
   return (
     <div className='App'>
       <Jogo mayIPlay={mayIPlay} setMayIPlay={setMayIPlay} 
       choosedLetters={choosedLetters} mistakesNum={mistakesNum} 
-      choosedWord={choosedWord} setChoosedWord={setChoosedWord}/>
-      <Letras mayIPlay={mayIPlay} setChoosedLetters={setChoosedLetters} 
-      setMistakesNum={setMistakesNum} choosedWord={choosedWord} />
+      choosedWord={choosedWord} setChoosedWord={setChoosedWord}
+      visualWord={visualWord} setVisualWord={setVisualWord} />
+      <Letras mayIPlay={mayIPlay} choosedLetters={choosedLetters} setChoosedLetters={setChoosedLetters} 
+      setMistakesNum={setMistakesNum} choosedWord={choosedWord} setVisualWord={setVisualWord}/>
     </div>
   );
 }
